@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="post" action="/login">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br><br>
+
+        <input type="submit" value="Login">
+    </form>
+    <script>
+        function simulateLogin(event) {
+            event.preventDefault(); // Prevents default form submission
+
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Simulated check of credentials (pseudo-Python code)
+            if (username === 'user' && password === 'pass') {
+                window.location.href = 'https://www.youtube.com/playlist?list=PLRBxqoCq8MJfQ5PPjlWcDUNm3zsY1TyJ0';
+            } else {
+                alert('Invalid username or password');
+                // Show an error message or handle accordingly
+            }
+        }
+
+        // Attaching the function to form submission
+        document.querySelector('form').addEventListener('submit', simulateLogin);
+    </script>
+</body>
+</html>
